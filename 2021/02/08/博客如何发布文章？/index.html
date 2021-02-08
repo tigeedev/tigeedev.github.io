@@ -19,11 +19,13 @@
     <link rel="dns-prefetch" href="http://example.com">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="博客搭建" />
 
 
-<meta name="description" content="充电哈哈哈哈哈
-" />
+<meta name="description" content="一、前言发布文章前需要在本地搭建各种环境，比如：git、node.js 等。具体可以参考 Hexo使用笔记
+二、自动生成文章1$ hexo new 第二篇文章
+
+三、编辑文章输入命令后会在 D:..." />
 
 
 <meta name="robots" content="all" />
@@ -34,7 +36,7 @@
 
 <title>
     
-    第二篇 |
+    博客如何发布文章？ |
     
     Tige&#39;s Blog
 </title>
@@ -42,7 +44,7 @@
 <link rel="alternate" href="/atom.xml" title="Tige&#39;s Blog" type="application/atom+xml">
 
 
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon-1.ico">
 
     
 
@@ -146,9 +148,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="第二篇">
+        <h1 id="博客如何发布文章？">
             
-            第二篇
+            博客如何发布文章？
             
         </h1>
         <div class="post-meta">
@@ -163,6 +165,8 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
+            <a class="tag-none-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a>
+            
         </span>
     </span>
     
@@ -171,7 +175,7 @@
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2021/02/06</span>
+            2021/02/08</span>
     </span>
     
     
@@ -181,7 +185,22 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="充电"><a href="#充电" class="headerlink" title="充电"></a>充电</h1><p>哈哈哈哈哈</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>发布文章前需要在本地搭建各种环境，比如：git、node.js 等。具体可以参考 <a target="_blank" rel="noopener" href="https://luhuban.github.io/2021/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">Hexo使用笔记</a></p>
+<h1 id="二、自动生成文章"><a href="#二、自动生成文章" class="headerlink" title="二、自动生成文章"></a>二、自动生成文章</h1><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">$</span> <span class="string">hexo</span> <span class="string">new</span> <span class="string">第二篇文章</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208150345.png" alt="image-20210204221929370"></p>
+<h1 id="三、编辑文章"><a href="#三、编辑文章" class="headerlink" title="三、编辑文章"></a>三、编辑文章</h1><p>输入命令后会在 <strong>D:\Workspace\hexo\source_posts</strong> 目录下生成 <code>.md</code> 文件，可以打开直接编辑</p>
+<p>而且可以在<code>scaffolds</code>目录下的<code>post.md</code>中修改新增文章 Front-matter 模板，这样下次自动生成的新文章就可以直接使用</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208145801.png" alt="image-20210204224009047"></p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208150417.png" alt="image-20210204224504848"></p>
+<h2 id="3-1-补充"><a href="#3-1-补充" class="headerlink" title="3.1 补充"></a>3.1 补充</h2><p><strong>Hexo标签和分类方法的分歧</strong></p>
+<blockquote>
+<p>只有文章支持分类和标签，可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说  <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p>
+</blockquote>
+<p>WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- Diary</span><br><span class="line">- Life</span><br></pre></td></tr></table></figure>
+<p><strong>会使分类Life成为Diary的子分类，而不是并列分类。</strong>因此，为了保证文章分类的准确，尽可能只留一个分类</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208150453.png" alt="image-20210204230123711"></p>
+<h1 id="四、编辑完成发布即可"><a href="#四、编辑完成发布即可" class="headerlink" title="四、编辑完成发布即可"></a>四、编辑完成发布即可</h1><p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208150527.png" alt="image-20210204222711864"></p>
 
     </div>
     
@@ -200,6 +219,12 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
+    <a href="/2021/02/08/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="pre-post btn btn-default" title='博客图床使用笔记'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            博客图床使用笔记</span>
+    </a>
+    
     
     <a href="/2021/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="next-post btn btn-default" title='Hexo使用笔记'>
         <span class="hidden-lg">下一篇</span>
@@ -207,6 +232,34 @@
             Hexo使用笔记</span><i class="fa fa-angle-right fa-fw"></i>
     </a>
     
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+    appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
 </div>
 
                 </main>
@@ -217,7 +270,7 @@
             文章目录
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%85%E7%94%B5"><span class="toc-text">充电</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0"><span class="toc-text">二、自动生成文章</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BC%96%E8%BE%91%E6%96%87%E7%AB%A0"><span class="toc-text">三、编辑文章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E8%A1%A5%E5%85%85"><span class="toc-text">3.1 补充</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BC%96%E8%BE%91%E5%AE%8C%E6%88%90%E5%8F%91%E5%B8%83%E5%8D%B3%E5%8F%AF"><span class="toc-text">四、编辑完成发布即可</span></a></li></ol>
         
     </div>
 </aside>

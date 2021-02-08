@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tige&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="博客搭建" />
+
+
+<meta name="description" content="一、前言日常写作用的最多的就是 Markdown 语法。Typora 作为大佬们一致推荐的 Markdown 编辑器，用起来最舒服！完全免费，而且支持实时预览 Markdown 文本
+所以之前我..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    博客图床使用笔记 |
+    
+    Tige&#39;s Blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Tige&#39;s Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon-1.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://xxx.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Tigee'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        Tige&#39;s Blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/充电学习/"><i class="fa "></i>
+                                充电学习</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔/"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about"><i class="fa "></i>
+                                关于</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="博客图床使用笔记">
+            
+            博客图床使用笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/">充电学习</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/02/08</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>日常写作用的最多的就是 Markdown 语法。Typora 作为大佬们一致推荐的 Markdown 编辑器，用起来最舒服！完全免费，而且支持实时预览 Markdown 文本</p>
+<p>所以之前我的写作方案一直是：<strong>Typora + OneDrive</strong> 。因为这样所有操作都可以在本地进行，没有上传图片的烦恼</p>
+<p>但是在博客写作中想要插入一些图片时，就需要将图片上传至图床生成 URL。网上一番探索后，最终挑选出以下几种方案：</p>
+<ol>
+<li>阿里云对象存储 <a target="_blank" rel="noopener" href="https://help.aliyun.com/product/31815.html">OSS</a>（一年9块）</li>
+<li>Github图床 + <a target="_blank" rel="noopener" href="https://www.jsdelivr.com/">jsdelivr</a> 的 CDN 加速</li>
+<li>Gtiee图床（码云）</li>
+</ol>
+<p>另外推荐配合 <a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">PicGo</a> ，可以快速上传图片并获取外链，美滋滋~</p>
+<p>所以目前我的方案是： <strong>Gitee + PicGo + Typora</strong> ，配置过程顺便做了笔记，留作以后参考。</p>
+<h1 id="二、本文软件-网站介绍"><a href="#二、本文软件-网站介绍" class="headerlink" title="二、本文软件/网站介绍"></a>二、本文软件/网站介绍</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/">Gitee</a> ：Gitee（码云），又称为国内的github。本文用作图片存储</li>
+<li><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">PicGo</a> ：一个用于快速上传图片并获取图片 URL 链接的工具，本文用于关联 Gitee 仓库</li>
+<li><a target="_blank" rel="noopener" href="https://www.typora.io/">Typora</a> ：一款支持实时预览的 Markdown 文本编辑器，本文用于关联 PicGo ，插入图片时即可自动上传至 Gitee</li>
+</ol>
+<h1 id="三、配置-Gitee"><a href="#三、配置-Gitee" class="headerlink" title="三、配置 Gitee"></a>三、配置 Gitee</h1><h2 id="3-1-新建仓库"><a href="#3-1-新建仓库" class="headerlink" title="3.1 新建仓库"></a>3.1 新建仓库</h2><p>登录 gitee ，点击右上角的 + 号，新建仓库</p>
+<img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208122810.png" alt="image-20210208122809749" style="zoom:80%;" />
+
+
+
+
+
+<h2 id="3-2-新建仓库基本配置"><a href="#3-2-新建仓库基本配置" class="headerlink" title="3.2 新建仓库基本配置"></a>3.2 新建仓库基本配置</h2><p>输入仓库名称，选择公开仓库，勾选使用 Readme 文件初始化这个仓库，然后点击 “创建” 即可</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153031.png" alt="image-20210208124231943"></p>
+<h2 id="3-3-生成私人令牌（token）"><a href="#3-3-生成私人令牌（token）" class="headerlink" title="3.3 生成私人令牌（token）"></a>3.3 生成私人令牌（token）</h2><p>点击设置-私人令牌-生成新令牌。注意<strong>令牌只会显示一次，要注意保存，后面在 PicGo 中会用到。</strong>如果忘记也可以删除重新生成。</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153055.png" alt="image-20210208132211648"></p>
+<h1 id="四、安装配置-PicGo"><a href="#四、安装配置-PicGo" class="headerlink" title="四、安装配置 PicGo"></a>四、安装配置 PicGo</h1><h2 id="4-1-安装图床插件"><a href="#4-1-安装图床插件" class="headerlink" title="4.1 安装图床插件"></a>4.1 安装图床插件</h2><p>由于 PicGo 本体并不支持 Gitee 图床，所以需要通过第三方图床插件来实现。找到 <strong>gitee-uploader</strong> 插件，安装成功图床中便会出现 gitee 一栏</p>
+<p>注意：电脑中必须先安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a> 才能安装插件，安装完重启即可</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153146.png" alt="image-20210208133129721"></p>
+<h2 id="4-2-配置-gitee-图床"><a href="#4-2-配置-gitee-图床" class="headerlink" title="4.2 配置 gitee 图床"></a>4.2 配置 gitee 图床</h2><ul>
+<li>repo：用户名/仓库名称，比如我自己的仓库 tigeedev/blog-Image</li>
+<li>branch：分支，填 master</li>
+<li>token：填入前面码云的私人令牌，搞丢了可以重新生成</li>
+<li>path：路径，一般写上 img</li>
+<li>customPath：这一项和下一项都不用填</li>
+</ul>
+<p>然后点击确定，并设为默认图床</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153201.png" alt="image-20210208134202618"></p>
+<h2 id="4-3-激活PicGo-Server"><a href="#4-3-激活PicGo-Server" class="headerlink" title="4.3 激活PicGo-Server"></a>4.3 激活PicGo-Server</h2><p>2.2 版本之后，PicGo内部会默认开启一个小型的服务器，用于配合其他应用来调用PicGo进行上传。</p>
+<p>打开 PicGo 设置页面，点击 “设置 Server” ，参考下图进行设置即可。</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153252.png" alt="image-20210208140449603"></p>
+<p>到这一步，已经可以在 PicGo 中上传图片了。上传成功 PicGo 会有提示，也可以在 Gitee 仓库中查看</p>
+<h1 id="五、配置-Typora"><a href="#五、配置-Typora" class="headerlink" title="五、配置 Typora"></a>五、配置 Typora</h1><p>用 Typora 写作时，如果插入的图片能直接上传到 Gitee 岂不是很方便？所以在 <strong>Typora 0.9.84 及以上版本</strong>已经支持了 PicGo</p>
+<p>点击 <strong>文件–偏好设置–图像</strong>，插入图片时选择 “上传图片” ，然后下面选择本地 PicGo 的路径即可</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153236.png" alt="image-20210208143016808"></p>
+<p><strong>验证图片上传</strong></p>
+<p>点击 “验证图片上传” ，验证成功会返回如下结果。</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153315.png" alt="image-20210208143304889"></p>
+<p>至此已经全部设置完成，以后在 Typora 中插入图片时，就可以自动上传到对应图床啦！</p>
+<h1 id="六、管理图片"><a href="#六、管理图片" class="headerlink" title="六、管理图片"></a>六、管理图片</h1><p><strong>所有上传的图片都可以在 Gitee 仓库中查看， 也可以在 PicGo 的相册中进行管理</strong></p>
+<p>不过可能是插件的原因，对相册中的图片进行的操作都会同步到 Gitee。也就是说<strong>在相册中删除图片时，Gitee中的图片也会同步删除</strong>，所以一定注意不要误删。</p>
+<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208154241.png" alt="image-20210208135110662"></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://luhuban.github.io/" target="_blank">Tigge</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/02/08/%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%EF%BC%9F/" class="next-post btn btn-default" title='博客如何发布文章？'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            博客如何发布文章？</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+    appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AC%E6%96%87%E8%BD%AF%E4%BB%B6-%E7%BD%91%E7%AB%99%E4%BB%8B%E7%BB%8D"><span class="toc-text">二、本文软件&#x2F;网站介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE-Gitee"><span class="toc-text">三、配置 Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">3.1 新建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-text">3.2 新建仓库基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E7%94%9F%E6%88%90%E7%A7%81%E4%BA%BA%E4%BB%A4%E7%89%8C%EF%BC%88token%EF%BC%89"><span class="toc-text">3.3 生成私人令牌（token）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-PicGo"><span class="toc-text">四、安装配置 PicGo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BA%8A%E6%8F%92%E4%BB%B6"><span class="toc-text">4.1 安装图床插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E9%85%8D%E7%BD%AE-gitee-%E5%9B%BE%E5%BA%8A"><span class="toc-text">4.2 配置 gitee 图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%BF%80%E6%B4%BBPicGo-Server"><span class="toc-text">4.3 激活PicGo-Server</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%85%8D%E7%BD%AE-Typora"><span class="toc-text">五、配置 Typora</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%AE%A1%E7%90%86%E5%9B%BE%E7%89%87"><span class="toc-text">六、管理图片</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021 luhuban
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
