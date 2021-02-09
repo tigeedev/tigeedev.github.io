@@ -22,8 +22,8 @@
 <meta name="keywords" content="博客搭建" />
 
 
-<meta name="description" content="一、前言日常写作用的最多的就是 Markdown 语法。Typora 作为大佬们一致推荐的 Markdown 编辑器，用起来最舒服！完全免费，而且支持实时预览 Markdown 文本
-所以之前我..." />
+<meta name="description" content="一、前言之前我的写作方案一直是：Typora + OneDrive 。因为这样所有操作都可以在本地进行，没有上传图片的烦恼
+但是在博客写作中想要插入一些图片时，就需要将图片上传至图床生成 URL..." />
 
 
 <meta name="robots" content="all" />
@@ -34,7 +34,7 @@
 
 <title>
     
-    博客图床使用笔记 |
+    Typora+PicGo+Gitee使用笔记 |
     
     Tige&#39;s Blog
 </title>
@@ -146,9 +146,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="博客图床使用笔记">
+        <h1 id="Typora+PicGo+Gitee使用笔记">
             
-            博客图床使用笔记
+            Typora+PicGo+Gitee使用笔记
             
         </h1>
         <div class="post-meta">
@@ -183,21 +183,21 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>日常写作用的最多的就是 Markdown 语法。Typora 作为大佬们一致推荐的 Markdown 编辑器，用起来最舒服！完全免费，而且支持实时预览 Markdown 文本</p>
-<p>所以之前我的写作方案一直是：<strong>Typora + OneDrive</strong> 。因为这样所有操作都可以在本地进行，没有上传图片的烦恼</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>之前我的写作方案一直是：<strong>Typora + OneDrive</strong> 。因为这样所有操作都可以在本地进行，没有上传图片的烦恼</p>
 <p>但是在博客写作中想要插入一些图片时，就需要将图片上传至图床生成 URL。网上一番探索后，最终挑选出以下几种方案：</p>
 <ol>
 <li>阿里云对象存储 <a target="_blank" rel="noopener" href="https://help.aliyun.com/product/31815.html">OSS</a>（一年9块）</li>
 <li>Github图床 + <a target="_blank" rel="noopener" href="https://www.jsdelivr.com/">jsdelivr</a> 的 CDN 加速</li>
 <li>Gtiee图床（码云）</li>
 </ol>
-<p>另外推荐配合 <a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">PicGo</a> ，可以快速上传图片并获取外链，美滋滋~</p>
-<p>所以目前我的方案是： <strong>Gitee + PicGo + Typora</strong> ，配置过程顺便做了笔记，留作以后参考。</p>
-<h1 id="二、本文软件-网站介绍"><a href="#二、本文软件-网站介绍" class="headerlink" title="二、本文软件/网站介绍"></a>二、本文软件/网站介绍</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://gitee.com/">Gitee</a> ：Gitee（码云），又称为国内的github。本文用作图片存储</li>
-<li><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">PicGo</a> ：一个用于快速上传图片并获取图片 URL 链接的工具，本文用于关联 Gitee 仓库</li>
-<li><a target="_blank" rel="noopener" href="https://www.typora.io/">Typora</a> ：一款支持实时预览的 Markdown 文本编辑器，本文用于关联 PicGo ，插入图片时即可自动上传至 Gitee</li>
+<p>所以目前我也有了一套比较满意的写作方案： <strong>Typora+ PicGo + Gitee</strong>  。使用Typora编写markdown笔记，Gitee作为图床，PicGo用于自动上传图片。完美~</p>
+<p>配置过程顺便做了笔记，留作以后参考。</p>
+<h1 id="二、本文工具介绍"><a href="#二、本文工具介绍" class="headerlink" title="二、本文工具介绍"></a>二、本文工具介绍</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/">Gitee</a> ：国内版的Github，功能跟Github基本一样，而且在国内访问非常快，用作图床再合适不过</li>
+<li><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">PicGo</a> ：一个用于快速上传图片并获取图片 URL 链接的工具，可以关联 Gitee 仓库，上传图片非常方便</li>
+<li><a target="_blank" rel="noopener" href="https://www.typora.io/">Typora</a> ：一款优雅的markdown编辑器，所见即所得的方式让人爱不释手。新版的Typora已经支持PicGo ，写作过程中插入图片便可直接上传至 Gitee</li>
 </ol>
+<p>Markdown 是一种轻量级标记语言，Github中的帮助文档也是统一使用 Markdown 编写。语法十分简单，十分钟便可入门。推荐学习教程：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/q81RER">献给写作者的 Markdown 新手指南</a></p>
 <h1 id="三、配置-Gitee"><a href="#三、配置-Gitee" class="headerlink" title="三、配置 Gitee"></a>三、配置 Gitee</h1><h2 id="3-1-新建仓库"><a href="#3-1-新建仓库" class="headerlink" title="3.1 新建仓库"></a>3.1 新建仓库</h2><p>登录 gitee ，点击右上角的 + 号，新建仓库</p>
 <img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208122810.png" alt="image-20210208122809749" style="zoom:80%;" />
 
@@ -298,7 +298,7 @@ new Valine({
             文章目录
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AC%E6%96%87%E8%BD%AF%E4%BB%B6-%E7%BD%91%E7%AB%99%E4%BB%8B%E7%BB%8D"><span class="toc-text">二、本文软件&#x2F;网站介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE-Gitee"><span class="toc-text">三、配置 Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">3.1 新建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-text">3.2 新建仓库基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E7%94%9F%E6%88%90%E7%A7%81%E4%BA%BA%E4%BB%A4%E7%89%8C%EF%BC%88token%EF%BC%89"><span class="toc-text">3.3 生成私人令牌（token）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-PicGo"><span class="toc-text">四、安装配置 PicGo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BA%8A%E6%8F%92%E4%BB%B6"><span class="toc-text">4.1 安装图床插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E9%85%8D%E7%BD%AE-gitee-%E5%9B%BE%E5%BA%8A"><span class="toc-text">4.2 配置 gitee 图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%BF%80%E6%B4%BBPicGo-Server"><span class="toc-text">4.3 激活PicGo-Server</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%85%8D%E7%BD%AE-Typora"><span class="toc-text">五、配置 Typora</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%AE%A1%E7%90%86%E5%9B%BE%E7%89%87"><span class="toc-text">六、管理图片</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%AC%E6%96%87%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D"><span class="toc-text">二、本文工具介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE-Gitee"><span class="toc-text">三、配置 Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">3.1 新建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-text">3.2 新建仓库基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E7%94%9F%E6%88%90%E7%A7%81%E4%BA%BA%E4%BB%A4%E7%89%8C%EF%BC%88token%EF%BC%89"><span class="toc-text">3.3 生成私人令牌（token）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-PicGo"><span class="toc-text">四、安装配置 PicGo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BA%8A%E6%8F%92%E4%BB%B6"><span class="toc-text">4.1 安装图床插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E9%85%8D%E7%BD%AE-gitee-%E5%9B%BE%E5%BA%8A"><span class="toc-text">4.2 配置 gitee 图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%BF%80%E6%B4%BBPicGo-Server"><span class="toc-text">4.3 激活PicGo-Server</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%85%8D%E7%BD%AE-Typora"><span class="toc-text">五、配置 Typora</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%AE%A1%E7%90%86%E5%9B%BE%E7%89%87"><span class="toc-text">六、管理图片</span></a></li></ol>
         
     </div>
 </aside>
