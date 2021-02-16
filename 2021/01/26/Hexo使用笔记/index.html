@@ -25,7 +25,7 @@
 <meta name="description" content="前言这里只记录了自己在安装过程中所遇到的问题及解决方法。具体过程可参考以下两篇文章
 hexo搭建指南具体教程：
 使用hexo+github搭建免费个人博客详细教程
-结合hexo在GitHub上搭..." />
+使用 Github Pages..." />
 
 
 <meta name="robots" content="all" />
@@ -188,7 +188,7 @@ hexo搭建指南具体教程：
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里只记录了自己在安装过程中所遇到的问题及解决方法。具体过程可参考以下两篇文章</p>
 <h1 id="hexo搭建指南"><a href="#hexo搭建指南" class="headerlink" title="hexo搭建指南"></a>hexo搭建指南</h1><p>具体教程：</p>
 <p><a target="_blank" rel="noopener" href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa">使用hexo+github搭建免费个人博客详细教程</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/trista222/p/8017300.html">结合hexo在GitHub上搭建个人博客——全过程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.itrhx.com/2018/08/15/A02-hexo-blog/">使用 Github Pages 和 Hexo 搭建自己的独立博客</a></p>
 <p>两者可以搭配使用~</p>
 <h1 id="安装过程问题解决"><a href="#安装过程问题解决" class="headerlink" title="安装过程问题解决"></a>安装过程问题解决</h1><h2 id="本地安装hexo博客框架"><a href="#本地安装hexo博客框架" class="headerlink" title="本地安装hexo博客框架"></a>本地安装hexo博客框架</h2><p>需借助 npm 包管理器来安装。因为国内安装镜像源很慢，所以利用 npm 安装 cnpm。</p>
 <p>用淘宝链接进行安装：</p>
@@ -231,7 +231,7 @@ hexo搭建指南具体教程：
         <div>
             
             转载声明：
-            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://luhuban.github.io/" target="_blank">Tigge</a>
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://tigeedev.github.io/" target="_blank">Tigee</a>
             
             
         </div>
@@ -298,14 +298,59 @@ new Valine({
     <footer class="main-footer">
     <div class="container">
         <div class="row">
+		
         </div>
     </div>
 </footer>
+
 <a id="back-to-top" class="icon-btn hide">
     <i class="fa fa-chevron-up"></i>
 </a>
+
+
     <div class="copyright">
     <div class="container">
+	
+		<!-- 网站运行时间 -->
+		<div>
+			<span id="sitetime"></span>
+			<script language=javascript>
+				function siteTime(){
+					window.setTimeout("siteTime()", 1000);
+					var seconds = 1000;
+					var minutes = seconds * 60;
+					var hours = minutes * 60;
+					var days = hours * 24;
+					var years = days * 365;
+					var today = new Date();
+					var todayYear = today.getFullYear();
+					var todayMonth = today.getMonth()+1;
+					var todayDate = today.getDate();
+					var todayHour = today.getHours();
+					var todayMinute = today.getMinutes();
+					var todaySecond = today.getSeconds();
+					/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+					year - 作为date对象的年份，为4位年份值
+					month - 0-11之间的整数，做为date对象的月份
+					day - 1-31之间的整数，做为date对象的天数
+					hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+					minutes - 0-59之间的整数，做为date对象的分钟数
+					seconds - 0-59之间的整数，做为date对象的秒数
+					microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+					var t1 = Date.UTC(2021,01,26,15,53,48); //北京时间2021-1-26 15:53:48
+					var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+					var diff = t2-t1;
+					var diffYears = Math.floor(diff/years);
+					var diffDays = Math.floor((diff/days)-diffYears*365);
+					var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+					var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+					var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+					document.getElementById("sitetime").innerHTML=" 本站已运行 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+				}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+				siteTime();
+			</script>
+		</div>
+	
         <div class="row">
             <div class="col-sm-12">
                 <div class="busuanzi">
@@ -314,7 +359,7 @@ new Valine({
             </div>
             <div class="col-sm-12">
                 <span>Copyright &copy;
-                    2021 luhuban
+                    2021
                     
                 </span> |
                 <span>
@@ -335,3 +380,6 @@ new Valine({
 
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
