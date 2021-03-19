@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.tigeedev.com/2021/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://www.tigeedev.com/2021/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2021-03-19</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.tigeedev.com/2021/02/08/Hexo%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://www.tigeedev.com/2021/02/08/Hexo%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2021-03-19</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.tigeedev.com/about/index.html</loc>
+    <loc>https://www.tigeedev.com/about/index.html</loc>
     
     <lastmod>2021-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.tigeedev.com/2021/03/11/SSH%20%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%20CentOS/</loc>
+    <loc>https://www.tigeedev.com/2021/03/11/SSH%20%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%20CentOS/</loc>
     
     <lastmod>2021-03-11</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.tigeedev.com/2021/02/08/Typora+PicGo+Gitee%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://www.tigeedev.com/2021/02/08/Typora+PicGo+Gitee%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2021-02-18</lastmod>
     
@@ -38,7 +38,7 @@
   
 
   <url>
-    <loc>http://www.tigeedev.com/</loc>
+    <loc>https://www.tigeedev.com/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -46,21 +46,21 @@
 
   
   <url>
-    <loc>http://www.tigeedev.com/tags/Hexo/</loc>
+    <loc>https://www.tigeedev.com/tags/Hexo/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.tigeedev.com/tags/ssh/</loc>
+    <loc>https://www.tigeedev.com/tags/ssh/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.tigeedev.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>https://www.tigeedev.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -69,7 +69,7 @@
 
   
   <url>
-    <loc>http://www.tigeedev.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://www.tigeedev.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2021-03-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
