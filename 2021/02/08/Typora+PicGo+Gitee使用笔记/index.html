@@ -180,6 +180,12 @@
 </div>
         
         
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                446</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
     </div>
     
     <div class="post-body post-content">
@@ -199,19 +205,25 @@
 </ol>
 <p>Markdown 是一种轻量级标记语言，Github中的帮助文档也是统一使用 Markdown 编写。语法十分简单，十分钟便可入门。推荐学习教程：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/q81RER">献给写作者的 Markdown 新手指南</a></p>
 <h1 id="三、配置-Gitee"><a href="#三、配置-Gitee" class="headerlink" title="三、配置 Gitee"></a>三、配置 Gitee</h1><h2 id="3-1-新建仓库"><a href="#3-1-新建仓库" class="headerlink" title="3.1 新建仓库"></a>3.1 新建仓库</h2><p>登录 gitee ，点击右上角的 + 号，新建仓库</p>
-<img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208122810.png" alt="image-20210208122809749" style="zoom:80%;" />
+<img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430175941.png" alt="20210208122810" style="zoom:80%;" />
 
 
 
 
 
 <h2 id="3-2-新建仓库基本配置"><a href="#3-2-新建仓库基本配置" class="headerlink" title="3.2 新建仓库基本配置"></a>3.2 新建仓库基本配置</h2><p>输入仓库名称，选择公开仓库，勾选使用 Readme 文件初始化这个仓库，然后点击 “创建” 即可</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153031.png" alt="image-20210208124231943"></p>
+<img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180022.png" alt="20210208153031" style="zoom:80%;" />
+
+
+
 <h2 id="3-3-生成私人令牌（token）"><a href="#3-3-生成私人令牌（token）" class="headerlink" title="3.3 生成私人令牌（token）"></a>3.3 生成私人令牌（token）</h2><p>点击设置-私人令牌-生成新令牌。注意<strong>令牌只会显示一次，要注意保存，后面在 PicGo 中会用到。</strong>如果忘记也可以删除重新生成。</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153055.png" alt="image-20210208132211648"></p>
+<img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180058.png" alt="20210208153055" style="zoom:80%;" />
+
+
+
 <h1 id="四、安装配置-PicGo"><a href="#四、安装配置-PicGo" class="headerlink" title="四、安装配置 PicGo"></a>四、安装配置 PicGo</h1><h2 id="4-1-安装图床插件"><a href="#4-1-安装图床插件" class="headerlink" title="4.1 安装图床插件"></a>4.1 安装图床插件</h2><p>由于 PicGo 本体并不支持 Gitee 图床，所以需要通过第三方图床插件来实现。找到 <strong>gitee-uploader</strong> 插件，安装成功图床中便会出现 gitee 一栏</p>
 <p>注意：电脑中必须先安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a> 才能安装插件，安装完重启即可</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153146.png" alt="image-20210208133129721"></p>
+<p><img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180126.png" alt="20210208153146"></p>
 <h2 id="4-2-配置-gitee-图床"><a href="#4-2-配置-gitee-图床" class="headerlink" title="4.2 配置 gitee 图床"></a>4.2 配置 gitee 图床</h2><ul>
 <li>repo：用户名/仓库名称，比如我自己的仓库 tigeedev/blog-Image</li>
 <li>branch：分支，填 master</li>
@@ -220,21 +232,21 @@
 <li>customPath：这一项和下一项都不用填</li>
 </ul>
 <p>然后点击确定，并设为默认图床</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153201.png" alt="image-20210208134202618"></p>
+<p><img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180147.png" alt="20210208153201"></p>
 <h2 id="4-3-激活PicGo-Server"><a href="#4-3-激活PicGo-Server" class="headerlink" title="4.3 激活PicGo-Server"></a>4.3 激活PicGo-Server</h2><p>2.2 版本之后，PicGo内部会默认开启一个小型的服务器，用于配合其他应用来调用PicGo进行上传。</p>
 <p>打开 PicGo 设置页面，点击 “设置 Server” ，参考下图进行设置即可。</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153252.png" alt="image-20210208140449603"></p>
+<p><img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180209.png" alt="20210208153252"></p>
 <p>到这一步，已经可以在 PicGo 中上传图片了。上传成功 PicGo 会有提示，也可以在 Gitee 仓库中查看</p>
 <h1 id="五、配置-Typora"><a href="#五、配置-Typora" class="headerlink" title="五、配置 Typora"></a>五、配置 Typora</h1><p>用 Typora 写作时，如果插入的图片能直接上传到 Gitee 岂不是很方便？所以在 <strong>Typora 0.9.84 及以上版本</strong>已经支持了 PicGo</p>
 <p>点击 <strong>文件–偏好设置–图像</strong>，插入图片时选择 “上传图片” ，然后下面选择本地 PicGo 的路径即可</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153236.png" alt="image-20210208143016808"></p>
+<p><img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180231.png" alt="20210208153236"></p>
 <p><strong>验证图片上传</strong></p>
 <p>点击 “验证图片上传” ，验证成功会返回如下结果。</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208153315.png" alt="image-20210208143304889"></p>
+<p><img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180250.png" alt="20210208153315"></p>
 <p>至此已经全部设置完成，以后在 Typora 中插入图片时，就可以自动上传到对应图床啦！</p>
 <h1 id="六、管理图片"><a href="#六、管理图片" class="headerlink" title="六、管理图片"></a>六、管理图片</h1><p><strong>所有上传的图片都可以在 Gitee 仓库中查看， 也可以在 PicGo 的相册中进行管理</strong></p>
 <p>不过可能是插件的原因，对相册中的图片进行的操作都会同步到 Gitee。也就是说<strong>在相册中删除图片时，Gitee中的图片也会同步删除</strong>，所以一定注意不要误删。</p>
-<p><img src="https://gitee.com/tigeedev/blog-image/raw/master/img/20210208221228.png" alt="image-20210208135110662"></p>
+<p><img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180307.png" alt="20210208221228"></p>
 
     </div>
     
