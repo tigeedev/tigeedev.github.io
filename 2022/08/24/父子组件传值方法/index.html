@@ -19,10 +19,11 @@
     <link rel="dns-prefetch" href="http://www.tigeedev.com">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="Vue" />
 
 
-<meta name="description" content="" />
+<meta name="description" content="父子组件传值方法父传子通过props传递
+123父组件: &lt;children :value &#x3D; &#39;传递的数据&#39; &#x2F;&gt;子组件: props[&#39..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +34,7 @@
 
 <title>
     
-    标签: Hexo |
+    父子组件传值方法 |
     
     Tigee&#39;s Blog
 </title>
@@ -141,220 +142,135 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        Hexo
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="父子组件传值方法">
+            
+            父子组件传值方法
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-media">
-        <a href="/2021/02/08/Typora+PicGo+Gitee%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
-            <img class="img-ajax" src="/img/loading.gif" data-src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180334.png" alt="Typora+PicGo+Gitee使用笔记">
-        </a>
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Vue/" rel="tag">Vue</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2022/08/24</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
     </div>
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2021/02/08/Typora+PicGo+Gitee%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
-                    Typora+PicGo+Gitee使用笔记</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2021年02月08日
-                </time>
-            </div>
+    <div class="post-body post-content">
+        <h2 id="父子组件传值方法"><a href="#父子组件传值方法" class="headerlink" title="父子组件传值方法"></a>父子组件传值方法</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><p>通过props传递</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">父组件: &lt;children :value &#x3D; &#39;传递的数据&#39; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">子组件: props[&#39;value&#39;], 接收数据,接受之后与data中定义的数据使用方式一样</span><br></pre></td></tr></table></figure>
+<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p>使用自定义事件。子组件通过 <code>$emit()</code> 来触发事件，父组件通过 <code>v-on</code> 来监听子组件事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 子组件</span><br><span class="line">this.$emit(&#39;receive&#39;, &#39;传递的数据&#39;)</span><br><span class="line"></span><br><span class="line"># 父组件 @子组件绑定事件&#x3D;新方法名</span><br><span class="line">&lt;children @receive &#x3D; &#39;receive&#39; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line"># 父组件接收数据</span><br><span class="line">receive(val) &#123;</span><br><span class="line">    console.log(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="兄弟组件传值"><a href="#兄弟组件传值" class="headerlink" title="兄弟组件传值"></a>兄弟组件传值</h3><ul>
+<li>通过bus事件总线传值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> main.js中创建一个事件总线		<span class="comment">// 建立中转站</span></span><br><span class="line"><span class="keyword">let</span> bus = <span class="keyword">new</span> Vue();</span><br><span class="line">Vue.prototype.bus = bus;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> methods中定义函数发送</span><br><span class="line"><span class="built_in">this</span>.bus.$emit(<span class="string">&quot;getData&quot;</span>, <span class="built_in">this</span>.data1);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> created中接收数据</span><br><span class="line"><span class="built_in">this</span>.bus.$on(<span class="string">&quot;getData&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过vuex</li>
+</ul>
+<h3 id="refs-传值"><a href="#refs-传值" class="headerlink" title="$refs 传值"></a>$refs 传值</h3><p>当父组件需要访问子组件中的数据/方法时，可使用 <code>$refs</code> 方式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># ref 负责给子组件绑定特定的ID, 然后用 $refs 访问该子组件</span><br><span class="line"></span><br><span class="line"># 父组件</span><br><span class="line"><span class="tag">&lt;<span class="name">children</span> <span class="attr">ref</span> = <span class="string">&#x27;child1&#x27;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">children2</span> <span class="attr">ref</span> = <span class="string">&#x27;child2&#x27;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"># 访问子组件数据</span><br><span class="line">this.$refs.child1.数据</span><br></pre></td></tr></table></figure>
+
+
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52940988/article/details/123921747">父子组件传值方法</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
         </div>
-        <p class="brief">
+        <div>
             
-            一、前言之前我的写作方案一直是：Typora + OneDrive 。因为这样所有操作都可以在...
-            
-        </p>
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/08/20/Nginx%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE/" class="next-post btn btn-default" title='Nginx在同一个域名下配置多个项目'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Nginx在同一个域名下配置多个项目</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
-<article class="post">
+<div id="comments">
     
-    <div class="post-media">
-        <a href="/2021/02/08/Hexo%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
-            <img class="img-ajax" src="/img/loading.gif" data-src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180445.png" alt="Hexo 博客的常用配置">
-        </a>
-    </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2021/02/08/Hexo%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">
-                    Hexo 博客的常用配置</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2021年02月08日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            一、hexo常见命令1.1 新建文章输入以下命令后会在 hexo\source\_posts ...
-            
-        </p>
-    </div>
-</article>
 
-<article class="post">
-    
-    <div class="post-media">
-        <a href="/2021/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
-            <img class="img-ajax" src="/img/loading.gif" data-src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220430180541.png" alt="Hexo使用笔记">
-        </a>
-    </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2021/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
-                    Hexo使用笔记</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2021年01月26日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            【00】前言折腾 Hexo 时遇到过不少坑，过程中遇到比较好的文章会在这篇罗列出来，方便以后查...
-            
-        </p>
-    </div>
-</article>
+<div id="vcomments" class="valine"></div>
 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'wsaPXR5dqvagWNRBneUQ5fnK-gzGzoHsz',
+    appKey: 'dpsSm8LvkS3gfUszaNqs5gmK',
+    placeholder: '说点什么吧~',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/tigeedev" rel="external nofollow" title="Github" target="_blank">
-            <i class="github fa fa-github"></i>
-        </a>
-        
-        <a href="//gitee.com/tigeedev" rel="external nofollow" title="Gitee" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E6%96%B9%E6%B3%95"><span class="toc-text">父子组件传值方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E4%BC%A0%E5%AD%90"><span class="toc-text">父传子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E4%BC%A0%E7%88%B6"><span class="toc-text">子传父</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-text">兄弟组件传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#refs-%E4%BC%A0%E5%80%BC"><span class="toc-text">$refs 传值</span></a></li></ol></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/"><i class="fa" aria-hidden="true">充电学习</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/"><i class="fa" aria-hidden="true">2022年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/"><i class="fa" aria-hidden="true">2021年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/"><i class="fa" aria-hidden="true">2021年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/"><i class="fa" aria-hidden="true">2021年02月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/"><i class="fa" aria-hidden="true">2021年01月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="http://tig198.ys168.com/" class="fa" target="_blank">
-            储物间</a>
-        
-        <a href="https://www.axutongxue.com/2020/12/contents.html" class="fa" target="_blank">
-            阿虚同学</a>
-        
-        <a href="http://www.godbasin.com/" class="fa" target="_blank">
-            前端游乐场</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -428,10 +344,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 
