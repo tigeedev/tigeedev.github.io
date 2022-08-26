@@ -19,10 +19,11 @@
     <link rel="dns-prefetch" href="http://www.tigeedev.com">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="Vue" />
 
 
-<meta name="description" content="" />
+<meta name="description" content="Vue项目打包失败的解决方法vue项目在打包时出现如下错误：
+123456- building for production...Error processing file: static&#x..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +34,7 @@
 
 <title>
     
-    分类: 前端 |
+    Vue项目打包失败 |
     
     Tigee&#39;s Blog
 </title>
@@ -141,181 +142,103 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        前端
-    </li>
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="Vue项目打包失败">
+            
+            Vue项目打包失败
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2022/08/26/Vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5/">
-                    Vue项目打包失败</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2022年08月26日
-                </time>
-            </div>
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Vue/" rel="tag">Vue</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2022/08/26</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Vue项目打包失败的解决方法"><a href="#Vue项目打包失败的解决方法" class="headerlink" title="Vue项目打包失败的解决方法"></a>Vue项目打包失败的解决方法</h2><p>vue项目在打包时出现如下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- building for production...Error processing file: static&#x2F;css&#x2F;app.a791596ecaab5ad11cc0c7b047f1b2c0.css</span><br><span class="line">C:\Users\Admin\Desktop\tielujiayuan-qianduan\node_modules\optimize-css-assets-webpack-plugin\node_modules\postcss\lib\input.js:128</span><br><span class="line">      result &#x3D; new _cssSyntaxError.default(message, line, column, this.css, this.file, opts.plugin);</span><br><span class="line"></span><br><span class="line">CssSyntaxError: C:\Users\Admin\Desktop\tielujiayuan-qianduan\static\css\app.a791596ecaab5ad11cc0c7b047f1b2c0.css:17431:6: Unknown word</span><br><span class="line">    at Input.error (C:\Users\Admin\Desktop\tielujiayuan-qianduan\node_modules\optimize-css-assets-webpack-plugin\node_modules\postcss\lib\input.js:128:16)</span><br></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 在<span class="selector-tag">cssLoader</span>中增加如下代码</span><br><span class="line"></span><br><span class="line">const cssLoader = &#123;</span><br><span class="line">   loader: &#x27;css-loader&#x27;,</span><br><span class="line">   <span class="selector-tag">options</span>: &#123;</span><br><span class="line">      <span class="attribute">sourceMap</span>: options.sourceMap,</span><br><span class="line">      minimize:true</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220826111944.png" alt="image-20220826111939725" style="zoom: 78%;" />
+
+
+
+
+
+
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
         </div>
-        <p class="brief">
+        <div>
             
-            Vue项目打包失败的解决方法vue项目在打包时出现如下错误：
-123456- building...
-            
-        </p>
+        </div>
     </div>
 </article>
-
-<article class="post">
+<div class="article-nav prev-next-wrap clearfix">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2022/08/24/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E6%96%B9%E6%B3%95/">
-                    父子组件传值方法</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2022年08月24日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            父子组件传值方法父传子通过props传递
-123父组件: &amp;lt;children :valu...
-            
-        </p>
-    </div>
-</article>
-
+    
+    <a href="/2022/08/24/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E6%96%B9%E6%B3%95/" class="next-post btn btn-default" title='父子组件传值方法'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            父子组件传值方法</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/tigeedev" rel="external nofollow" title="Github" target="_blank">
-            <i class="github fa fa-github"></i>
-        </a>
-        
-        <a href="//gitee.com/tigeedev" rel="external nofollow" title="Gitee" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">Vue项目打包失败的解决方法</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/"><i class="fa" aria-hidden="true">充电学习</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/"><i class="fa" aria-hidden="true">2022年08月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/"><i class="fa" aria-hidden="true">2021年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/"><i class="fa" aria-hidden="true">2021年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/"><i class="fa" aria-hidden="true">2021年02月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/"><i class="fa" aria-hidden="true">2021年01月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="http://tig198.ys168.com/" class="fa" target="_blank">
-            储物间</a>
-        
-        <a href="https://www.axutongxue.com/2020/12/contents.html" class="fa" target="_blank">
-            阿虚同学</a>
-        
-        <a href="http://www.godbasin.com/" class="fa" target="_blank">
-            前端游乐场</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -389,10 +312,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.tigeedev.com/2022/08/26/Vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5/</loc>
+    
+    <lastmod>2022-08-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.tigeedev.com/2022/08/24/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2022-08-24</lastmod>
@@ -60,7 +67,7 @@
 
   <url>
     <loc>http://www.tigeedev.com/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,42 +75,42 @@
   
   <url>
     <loc>http://www.tigeedev.com/tags/ssh/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/tags/Hexo/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/tags/nginx/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/tags/Vue/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,21 +119,21 @@
   
   <url>
     <loc>http://www.tigeedev.com/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.tigeedev.com/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
