@@ -19,10 +19,17 @@
     <link rel="dns-prefetch" href="http://www.tigeedev.cn">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="服务器,nginx" />
 
 
-<meta name="description" content="" />
+<meta name="description" content="前言服务器可以部署多个项目，在只有一个域名的情况下，可以给不同的项目分配不同的二级域名来进行访问。
+配置过程1. 添加二级域名
+添加A记录到主机
+同一个域名可以解析出N个二级域名
+
+
+
+2. 配..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +40,7 @@
 
 <title>
     
-    标签: nginx |
+    Nginx在同一个域名下配置多个项目 |
     
     Tigee&#39;s Blog
 </title>
@@ -141,158 +148,122 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        nginx
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="Nginx在同一个域名下配置多个项目">
+            
+            Nginx在同一个域名下配置多个项目
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2022/08/20/Nginx%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE/">
-                    Nginx在同一个域名下配置多个项目</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2022年08月20日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/">充电学习</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
             
-            前言服务器可以部署多个项目，在只有一个域名的情况下，可以给不同的项目分配不同的二级域名来进行访...
+            <a class="tag-none-link" href="/tags/nginx/" rel="tag">nginx</a> <a class="tag-none-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a>
             
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2022/08/20</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                506</strong>
+            天之前发表，文中内容可能已经过时。
         </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>服务器可以部署多个项目，在只有一个域名的情况下，可以给不同的项目分配不同的二级域名来进行访问。</p>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><h3 id="1-添加二级域名"><a href="#1-添加二级域名" class="headerlink" title="1. 添加二级域名"></a>1. 添加二级域名</h3><ul>
+<li>添加A记录到主机</li>
+<li>同一个域名可以解析出N个二级域名</li>
+</ul>
+<img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20210820184102.png" alt="image-20210820184059426" style="zoom:80%;" />
+
+<h3 id="2-配置nginx"><a href="#2-配置nginx" class="headerlink" title="2. 配置nginx"></a>2. 配置nginx</h3><ul>
+<li>nginx 中另添加一个 <code>server</code> </li>
+<li>修改后重启nginx<ul>
+<li>先使用 <code>nginx -t</code> 测试语法是否正确</li>
+<li>使用命令 <code>nginx -s reload</code> 重新加载配置文件</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># hexo博客</span><br><span class="line">#</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.tigeedev.com;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   &#x2F;var&#x2F;hexo;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #error_page  404              &#x2F;404.html;</span><br><span class="line"></span><br><span class="line">    # redirect server error pages to the static page &#x2F;50x.html</span><br><span class="line">    #</span><br><span class="line">    error_page   500 502 503 504  &#x2F;50x.html;</span><br><span class="line">    location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 商城项目</span><br><span class="line">#</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  shop.tigeedev.com;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   &#x2F;var&#x2F;mall;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">        try_files $uri $uri&#x2F; &#x2F;index.html; #使用history模式进行路由</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/cc_want/article/details/83780435">Nginx同一个域名配置多个项目</a></li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
-
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2022/08/24/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E6%96%B9%E6%B3%95/" class="pre-post btn btn-default" title='父子组件传值方法'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            父子组件传值方法</span>
+    </a>
+    
+    
+    <a href="/2022/03/11/2022/" class="next-post btn btn-default" title='2022'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            2022</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/tigeedev" rel="external nofollow" title="Github" target="_blank">
-            <i class="github fa fa-github"></i>
-        </a>
-        
-        <a href="//gitee.com/tigeedev" rel="external nofollow" title="Gitee" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B"><span class="toc-text">配置过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="toc-text">1. 添加二级域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEnginx"><span class="toc-text">2. 配置nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-text">参考文章</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/"><i class="fa" aria-hidden="true">充电学习</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/"><i class="fa" aria-hidden="true">2023年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/"><i class="fa" aria-hidden="true">2023年02月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/"><i class="fa" aria-hidden="true">2023年01月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/"><i class="fa" aria-hidden="true">2022年08月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/"><i class="fa" aria-hidden="true">2022年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/"><i class="fa" aria-hidden="true">2022年02月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="http://tig198.ys168.com/" class="fa" target="_blank">
-            储物间</a>
-        
-        <a href="https://www.axutongxue.com/2020/12/contents.html" class="fa" target="_blank">
-            阿虚同学</a>
-        
-        <a href="http://www.godbasin.com/" class="fa" target="_blank">
-            前端游乐场</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -366,10 +337,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 

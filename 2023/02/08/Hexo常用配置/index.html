@@ -19,11 +19,10 @@
     <link rel="dns-prefetch" href="http://www.tigeedev.cn">
     <!--SEO-->
 
-<meta name="keywords" content="Vue" />
+<meta name="keywords" content="Hexo" />
 
 
-<meta name="description" content="父子组件传值方法父传子通过props传递
-123父组件: &lt;children :value &#x3D; &#39;传递的数据&#39; &#x2F;&gt;子组件: props[&#39..." />
+<meta name="description" content="一、hexo常见命令1.1 新建文章输入以下命令后会在 hexo\source\_posts 目录下生成 .md 文件，打开即可直接编辑。当执行 hexo generate 命令时，文章会被编译..." />
 
 
 <meta name="robots" content="all" />
@@ -34,7 +33,7 @@
 
 <title>
     
-    父子组件传值方法 |
+    Hexo 博客的常用配置 |
     
     Tigee&#39;s Blog
 </title>
@@ -146,16 +145,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="父子组件传值方法">
+        <h1 id="Hexo 博客的常用配置">
             
-            父子组件传值方法
+            Hexo 博客的常用配置
             
         </h1>
         <div class="post-meta">
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+        <a class="category-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/">充电学习</a>
     </span>
     
     
@@ -163,7 +162,7 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            <a class="tag-none-link" href="/tags/Vue/" rel="tag">Vue</a>
+            <a class="tag-none-link" href="/tags/Hexo/" rel="tag">Hexo</a>
             
         </span>
     </span>
@@ -173,7 +172,7 @@
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2022/08/24</span>
+            2023/02/08</span>
     </span>
     
     <span class="fa-wrap">
@@ -187,29 +186,44 @@
         
         <p class="fa fa-exclamation-triangle warning">
             本文于<strong>
-                502</strong>
+                334</strong>
             天之前发表，文中内容可能已经过时。
         </p>
         
     </div>
     
     <div class="post-body post-content">
-        <h2 id="父子组件传值方法"><a href="#父子组件传值方法" class="headerlink" title="父子组件传值方法"></a>父子组件传值方法</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><p>通过props传递</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">父组件: &lt;children :value &#x3D; &#39;传递的数据&#39; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">子组件: props[&#39;value&#39;], 接收数据,接受之后与data中定义的数据使用方式一样</span><br></pre></td></tr></table></figure>
-<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p>使用自定义事件。子组件通过 <code>$emit()</code> 来触发事件，父组件通过 <code>v-on</code> 来监听子组件事件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 子组件</span><br><span class="line">this.$emit(&#39;receive&#39;, &#39;传递的数据&#39;)</span><br><span class="line"></span><br><span class="line"># 父组件 @子组件绑定事件&#x3D;新方法名</span><br><span class="line">&lt;children @receive &#x3D; &#39;receive&#39; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line"># 父组件接收数据</span><br><span class="line">receive(val) &#123;</span><br><span class="line">    console.log(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="兄弟组件传值"><a href="#兄弟组件传值" class="headerlink" title="兄弟组件传值"></a>兄弟组件传值</h3><ul>
-<li>通过bus事件总线传值</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> main.js中创建一个事件总线		<span class="comment">// 建立中转站</span></span><br><span class="line"><span class="keyword">let</span> bus = <span class="keyword">new</span> Vue();</span><br><span class="line">Vue.prototype.bus = bus;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> methods中定义函数发送</span><br><span class="line"><span class="built_in">this</span>.bus.$emit(<span class="string">&quot;getData&quot;</span>, <span class="built_in">this</span>.data1);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> created中接收数据</span><br><span class="line"><span class="built_in">this</span>.bus.$on(<span class="string">&quot;getData&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>通过vuex</li>
-</ul>
-<h3 id="refs-传值"><a href="#refs-传值" class="headerlink" title="$refs 传值"></a>$refs 传值</h3><p>当父组件需要访问子组件中的数据/方法时，可使用 <code>$refs</code> 方式</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># ref 负责给子组件绑定特定的ID, 然后用 $refs 访问该子组件</span><br><span class="line"></span><br><span class="line"># 父组件</span><br><span class="line"><span class="tag">&lt;<span class="name">children</span> <span class="attr">ref</span> = <span class="string">&#x27;child1&#x27;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">children2</span> <span class="attr">ref</span> = <span class="string">&#x27;child2&#x27;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"># 访问子组件数据</span><br><span class="line">this.$refs.child1.数据</span><br></pre></td></tr></table></figure>
+        <h2 id="一、hexo常见命令"><a href="#一、hexo常见命令" class="headerlink" title="一、hexo常见命令"></a>一、hexo常见命令</h2><h3 id="1-1-新建文章"><a href="#1-1-新建文章" class="headerlink" title="1.1 新建文章"></a>1.1 新建文章</h3><p>输入以下命令后会在 <code>hexo\source\_posts</code> 目录下生成 <code>.md</code> 文件，打开即可直接编辑。当执行 hexo generate 命令时，文章会被编译到 public 目录下，生成静态页面</p>
+<p><strong>新建文章</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;postName&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>本地预览</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存</span><br><span class="line">hexo s -g #生成静态页面并本地预览</span><br></pre></td></tr></table></figure>
 
 
-<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52940988/article/details/123921747">父子组件传值方法</a></p>
+<h3 id="1-2-文章发布"><a href="#1-2-文章发布" class="headerlink" title="1.2 文章发布"></a>1.2 文章发布</h3><p>写完文章，并进行本地预览后，就可以将文章发布到服务器端了</p>
+<p>每次部署的三个步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>命令简写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="1-3-其他常用命令"><a href="#1-3-其他常用命令" class="headerlink" title="1.3 其他常用命令"></a>1.3 其他常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server  #启动本地预览</span><br><span class="line">hexo deploy #将目录部署到服务器</span><br><span class="line">hexo help  # 查看帮助 </span><br><span class="line">hexo version  #查看Hexo的版本</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="二、hexo-文章格式"><a href="#二、hexo-文章格式" class="headerlink" title="二、hexo 文章格式"></a>二、hexo 文章格式</h2><blockquote>
+<p>文章格式可以让文章的信息更完整</p>
+</blockquote>
+<h3 id="2-1-hexo-文章常用格式"><a href="#2-1-hexo-文章常用格式" class="headerlink" title="2.1 hexo 文章常用格式"></a>2.1 hexo 文章常用格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">categories:</span><br><span class="line">  - 文章分类(添加一个即可)</span><br><span class="line">tags:</span><br><span class="line">  - 标签1</span><br><span class="line">  - 标签2</span><br><span class="line">comments: false</span><br><span class="line">date: 2021-02-08 14:56:28</span><br><span class="line">img:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-2-hexo-文章模板的自定义"><a href="#2-2-hexo-文章模板的自定义" class="headerlink" title="2.2 hexo 文章模板的自定义"></a>2.2 hexo 文章模板的自定义</h3><p>每次使用 <code>hexo new &quot;postName&quot;</code> 新建一篇文章时，默认只有title、date、tags这几个属性。</p>
+<p>我们可以修改 <code>hexo\scaffolds\post.md</code> 文件，自定义文章格式的模板，修改后的内容如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">---</span></span><br><span class="line">  title: &#123;&#123; title &#125;&#125;</span><br><span class="line">  date: &#123;&#123; date &#125;&#125;</span><br><span class="line">  <span class="selector-tag">categories</span>: <span class="selector-attr">[<span class="string">&#x27;分类1&#x27;</span>,<span class="string">&#x27;分类2&#x27;</span>]</span></span><br><span class="line">  <span class="selector-tag">tags</span>: <span class="selector-attr">[<span class="string">&#x27;标签1&#x27;</span>,<span class="string">&#x27;标签2&#x27;</span>]</span></span><br><span class="line">  <span class="selector-tag">comments</span>: <span class="selector-tag">false</span></span><br><span class="line">  <span class="selector-tag">img</span>:</span><br><span class="line"><span class="selector-tag">---</span></span><br></pre></td></tr></table></figure>
+
+
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.qianguyihao.com/2020-09-21-hexo-config/">hexo 博客的常见配置</a> </p>
 
     </div>
     
@@ -228,17 +242,17 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    <a href="/2022/08/26/Vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5/" class="pre-post btn btn-default" title='Vue项目打包失败'>
+    <a href="/2023/08/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="pre-post btn btn-default" title='git常用命令'>
         <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
         <span class="hidden-xs">
-            Vue项目打包失败</span>
+            git常用命令</span>
     </a>
     
     
-    <a href="/2022/08/20/Nginx%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE/" class="next-post btn btn-default" title='Nginx在同一个域名下配置多个项目'>
+    <a href="/2023/01/26/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="next-post btn btn-default" title='Hexo使用笔记'>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
-            Nginx在同一个域名下配置多个项目</span><i class="fa fa-angle-right fa-fw"></i>
+            Hexo使用笔记</span><i class="fa fa-angle-right fa-fw"></i>
     </a>
     
 </div>
@@ -279,7 +293,7 @@ new Valine({
             文章目录
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E6%96%B9%E6%B3%95"><span class="toc-text">父子组件传值方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E4%BC%A0%E5%AD%90"><span class="toc-text">父传子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E4%BC%A0%E7%88%B6"><span class="toc-text">子传父</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-text">兄弟组件传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#refs-%E4%BC%A0%E5%80%BC"><span class="toc-text">$refs 传值</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">一、hexo常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-text">1.1 新建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83"><span class="toc-text">1.2 文章发布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">1.3 其他常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81hexo-%E6%96%87%E7%AB%A0%E6%A0%BC%E5%BC%8F"><span class="toc-text">二、hexo 文章格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-hexo-%E6%96%87%E7%AB%A0%E5%B8%B8%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.1 hexo 文章常用格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-hexo-%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-text">2.2 hexo 文章模板的自定义</span></a></li></ol></li></ol>
         
     </div>
 </aside>

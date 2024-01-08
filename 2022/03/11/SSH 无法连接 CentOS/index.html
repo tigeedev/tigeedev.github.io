@@ -19,10 +19,13 @@
     <link rel="dns-prefetch" href="http://www.tigeedev.cn">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="ssh" />
 
 
-<meta name="description" content="" />
+<meta name="description" content="问题描述服务器是阿里云，CentOS 7.3
+今天刚完成备案，刚想接着折腾，结果发现 ssh 远程连接一直提示 Connection timed out（ping没问题）
+日志详情
+123456..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +36,7 @@
 
 <title>
     
-    标签: nginx |
+    SSH 无法连接 CentOS |
     
     Tigee&#39;s Blog
 </title>
@@ -141,158 +144,146 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        nginx
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="SSH 无法连接 CentOS">
+            
+            SSH 无法连接 CentOS
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2022/08/20/Nginx%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E4%B8%8B%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE/">
-                    Nginx在同一个域名下配置多个项目</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2022年08月20日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/">充电学习</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
             
-            前言服务器可以部署多个项目，在只有一个域名的情况下，可以给不同的项目分配不同的二级域名来进行访...
+            <a class="tag-none-link" href="/tags/ssh/" rel="tag">ssh</a>
             
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2022/03/11</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                668</strong>
+            天之前发表，文中内容可能已经过时。
         </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>服务器是阿里云，CentOS 7.3</p>
+<p>今天刚完成备案，刚想接着折腾，结果发现 ssh 远程连接一直提示 Connection timed out（ping没问题）</p>
+<p><strong>日志详情</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -v git@公网 IP</span><br><span class="line">OpenSSH_8.4p1, OpenSSL 1.1.1i  8 Dec 2020</span><br><span class="line">debug1: Reading configuration data &#x2F;etc&#x2F;ssh&#x2F;ssh_config</span><br><span class="line">debug1: Connecting to IP [IP] port 22.</span><br><span class="line">debug1: connect to address IP port 22: Connection timed out</span><br><span class="line"></span><br><span class="line">ssh: connect to host IP port 22: Connection timed out</span><br></pre></td></tr></table></figure>
+<p><strong>端口情况</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># sudo netstat -plnt</span><br><span class="line"></span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address    Foreign Address     State    PID&#x2F;Program name    </span><br><span class="line">tcp        0      0 0.0.0.0:80       0.0.0.0:*           LISTEN   2334&#x2F;nginx: master  </span><br><span class="line">tcp        0      0 0.0.0.0:22       0.0.0.0:*           LISTEN   2055&#x2F;sshd</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>连接不上可能是由于网络环境导致。之前 SSH 一直都正常连接，到学校才发现会 time out。所以校园网很可能是那个罪魁祸首</p>
+<p>…</p>
+<p>果不其然，用手机的 4G 开个热点就可以正常连接了。一点小问题折腾了一下午…淦</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://ruby-china.org/topics/37035">Linux Ubuntu 无法连接 ssh connect to host port 22: Connection timed out</a> </li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40943540/article/details/83108806?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_utm_term-1&spm=1001.2101.3001.4242">校园网手机ssh连接vm虚拟机linux教程</a></li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2022/03/11/2022/" class="pre-post btn btn-default" title='2022'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            2022</span>
+    </a>
+    
+    
+    <a href="/2022/02/08/Typora+PicGo+Gitee%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="next-post btn btn-default" title='Typora+PicGo+Gitee使用笔记'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Typora+PicGo+Gitee使用笔记</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'wsaPXR5dqvagWNRBneUQ5fnK-gzGzoHsz',
+    appKey: 'dpsSm8LvkS3gfUszaNqs5gmK',
+    placeholder: '说点什么吧~',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/tigeedev" rel="external nofollow" title="Github" target="_blank">
-            <i class="github fa fa-github"></i>
-        </a>
-        
-        <a href="//gitee.com/tigeedev" rel="external nofollow" title="Gitee" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/"><i class="fa" aria-hidden="true">充电学习</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/"><i class="fa" aria-hidden="true">2023年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/"><i class="fa" aria-hidden="true">2023年02月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/"><i class="fa" aria-hidden="true">2023年01月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/"><i class="fa" aria-hidden="true">2022年08月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/"><i class="fa" aria-hidden="true">2022年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/"><i class="fa" aria-hidden="true">2022年02月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 10px;">图床</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="http://tig198.ys168.com/" class="fa" target="_blank">
-            储物间</a>
-        
-        <a href="https://www.axutongxue.com/2020/12/contents.html" class="fa" target="_blank">
-            阿虚同学</a>
-        
-        <a href="http://www.godbasin.com/" class="fa" target="_blank">
-            前端游乐场</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -366,10 +357,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 

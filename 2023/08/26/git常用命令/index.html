@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tigee&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://www.tigeedev.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="Git" />
+
+
+<meta name="description" content="Git提交代码到指定分支123456git clone -b rongmei2022 仓库地址  #拉取指定分支git status  #查看文件的状态git add .  #把所有改过的文件都..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    git常用命令 |
+    
+    Tigee&#39;s Blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Tigee&#39;s Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://xxx.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Tigee'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.tigeedev.cn">
+                        Tigee&#39;s Blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/充电学习"><i class="fa "></i>
+                                充电学习</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about"><i class="fa "></i>
+                                关于</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="git常用命令">
+            
+            git常用命令
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Git/" rel="tag">Git</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/08/26</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="Git提交代码到指定分支"><a href="#Git提交代码到指定分支" class="headerlink" title="Git提交代码到指定分支"></a>Git提交代码到指定分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b rongmei2022 仓库地址  <span class="comment">#拉取指定分支</span></span><br><span class="line">git status  <span class="comment">#查看文件的状态</span></span><br><span class="line">git add .  <span class="comment">#把所有改过的文件都放到缓存区</span></span><br><span class="line">git commit -m  <span class="string">&#x27;注释&#x27;</span>  <span class="comment">#把文件从缓存区放到本地仓库内</span></span><br><span class="line">git push origin rongmei2022  <span class="comment">#把到本地仓库的代码推送到远程仓库</span></span><br><span class="line">git pull  <span class="comment">#把远程仓库的代码拉到本地仓库</span></span><br></pre></td></tr></table></figure>
+<h3 id="Git提交代码到新分支"><a href="#Git提交代码到新分支" class="headerlink" title="Git提交代码到新分支"></a>Git提交代码到新分支</h3><blockquote>
+<p>获取远程代码修改后,想要push到远端与原来不同的新分支，可以使用下面的命令实现：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin 本地分支:远端希望创建的分支</span><br><span class="line">git push origin master:my_remote_new_branch</span><br></pre></td></tr></table></figure>
+<h3 id="Git-reset（回滚）"><a href="#Git-reset（回滚）" class="headerlink" title="Git reset（回滚）"></a>Git reset（回滚）</h3><ol>
+<li><p>回滚到指定历史版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.先使用git <span class="built_in">log</span>查看一下历史版本</span></span><br><span class="line">git log</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.在使用git reset --hard命令回滚</span></span><br><span class="line">git reset --hard 你要回滚的id值</span><br><span class="line"><span class="meta">#</span><span class="bash"> 举例：git reset --hard 10086</span></span><br></pre></td></tr></table></figure></li>
+<li><p>回滚到当前版本的上一个版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^  #回退到上一个版本</span><br><span class="line">git reset --hard HEAD~2 #回退两个版本</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意：这里的~2指回滚多少次，HEAD~2代表回滚master前二个版本</span></span><br></pre></td></tr></table></figure>
+<h3 id="Git解决本地冲突"><a href="#Git解决本地冲突" class="headerlink" title="Git解决本地冲突"></a>Git解决本地冲突</h3></li>
+</ol>
+<blockquote>
+<p>git pull –rebase origin master<br>git rebase –continue</p>
+</blockquote>
+<p>1、git push时报错：failed to push some refs to…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">error: failed to push some refs to <span class="string">&#x27;http...git&#x27;</span></span><br><span class="line"></span><br><span class="line">$ git pull --rebase origin master  -&gt;  git push</span><br><span class="line"></span><br><span class="line">原因：这是远程库与本地库不一致造成的，只要把远程库同步到本地库即可</span><br><span class="line">上面指令的意思是把远程库中的更新合并到本地库中，–rebase的作用是取消掉本地库中刚刚的commit，并把他们接到更新后的版本库之中。</span><br></pre></td></tr></table></figure>
+<p>2、执行完 git pull –rebase origin master 后有合并冲突</p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37708668/article/details/88813266">git的冲突解决–git rebase之abort、continue、skip</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git status 查看发生冲突的文件, 然后手动解决冲突 (删除冲突的代码)</span><br><span class="line"></span><br><span class="line">$ 接着执行 git add . |  git commit -m <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">$ 再次执行 git status, 如果没有冲突的文件，则可以提交。</span><br><span class="line"></span><br><span class="line">$ git rebase --<span class="built_in">continue</span>  -&gt;  git push</span><br><span class="line">Successfully rebased and updated refs/heads/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行完 $ git pull --rebase 之后，本地如果产生冲突，手动解决冲突之后，用&quot;git add&quot;命令去更新这些内容的索引。</span></span><br><span class="line">然后执行 $ git rebase --<span class="built_in">continue</span> 就可以线性的连接本地分支与远程分支，无误之后就会退出，回到主分支上。</span><br><span class="line">注意：一般情况下，修改后检查没问题，使用rebase <span class="built_in">continue</span>来合并冲突。</span><br></pre></td></tr></table></figure>
+<img src="https://tigeedev.oss-cn-hangzhou.aliyuncs.com/img/20220810184157.png" alt="image-20220810184155184" style="zoom: 67%;" />
+
+
+
+<h3 id="Git更换远程仓库地址"><a href="#Git更换远程仓库地址" class="headerlink" title="Git更换远程仓库地址"></a>Git更换远程仓库地址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line">git remote -v  <span class="comment">#查看远端地址</span></span><br><span class="line">git remote <span class="comment">#查看远端仓库名</span></span><br><span class="line">git remote set-url origin https://github.com/xx/xx.git <span class="comment">#新地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">git remote rm origin <span class="comment">#删除远程的仓库</span></span><br><span class="line">git remote add origin  https://github.com/xx/xx.git <span class="comment">#重新添加远程仓库</span></span><br></pre></td></tr></table></figure>
+<h3 id="Git-gitignore文件无效"><a href="#Git-gitignore文件无效" class="headerlink" title="Git.gitignore文件无效"></a>Git.gitignore文件无效</h3><p>在初始化git仓库时没有创建 <code>.gitignore</code> 文件来过滤不必要提交的文件，后来发现某些文件不需要提交时，再创建 <code>.gitignore</code> 来忽略这些文件只会对没有被跟踪的文件有效，已经被跟踪的文件不会被忽略。</p>
+<p>可以先把本地缓存删除，然后再提交。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached 要忽略的文件</span><br></pre></td></tr></table></figure>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/toopoo/article/details/88660806?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-3-88660806-blog-86700921.235%5Ev35%5Epc_relevant_increate_t0_download_v2_base&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-3-88660806-blog-86700921.235%5Ev35%5Epc_relevant_increate_t0_download_v2_base&utm_relevant_index=4">使用.gitignore忽略文件或者文件夹及其失效解决方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e5b13480479b">git如何忽略已经提交的文件 (.gitignore文件无效)</a></p>
+<h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">git init //初始化项目</span><br><span class="line">git log //提交日志 全部显示</span><br><span class="line">git log --oneline //提交日志 优雅显示</span><br><span class="line">git commit --amend //修改提交的信息</span><br><span class="line">git config --list //查看基本配置</span><br><span class="line">git config --global  user.name &#x27;xxx.yyyzzz&#x27; //配置基本信息：用户名</span><br><span class="line">git config --global  user.email &#x27;xxx.yyyzzz@jnetdata.com&#x27; //配置基本信息：邮箱</span><br><span class="line">git remote add origin URL（仓库地址） //将本地仓库关联到远程仓库</span><br><span class="line">git branch //查看当前分支</span><br><span class="line">git branch &lt;name&gt; //创建新分支</span><br><span class="line">git checkout -b &lt;name&gt; //创建并切换到新分支</span><br><span class="line">git branch -d &lt;name&gt; //删除分支</span><br><span class="line">git checkout &lt;name&gt; //切换分支</span><br><span class="line">git push origin master //把本地仓库的master分支推送到远程仓库的master分支</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2023/02/08/Hexo%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="next-post btn btn-default" title='Hexo 博客的常用配置'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Hexo 博客的常用配置</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0%E6%8C%87%E5%AE%9A%E5%88%86%E6%94%AF"><span class="toc-text">Git提交代码到指定分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0%E6%96%B0%E5%88%86%E6%94%AF"><span class="toc-text">Git提交代码到新分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-reset%EF%BC%88%E5%9B%9E%E6%BB%9A%EF%BC%89"><span class="toc-text">Git reset（回滚）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E8%A7%A3%E5%86%B3%E6%9C%AC%E5%9C%B0%E5%86%B2%E7%AA%81"><span class="toc-text">Git解决本地冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E6%9B%B4%E6%8D%A2%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="toc-text">Git更换远程仓库地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-gitignore%E6%96%87%E4%BB%B6%E6%97%A0%E6%95%88"><span class="toc-text">Git.gitignore文件无效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Git常用命令</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+		
+        </div>
+    </div>
+	
+	
+	
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+			<!-- 网站运行时间 -->
+			<div>
+				<span id="sitetime"></span>
+				<script language=javascript>
+					function siteTime(){
+						window.setTimeout("siteTime()", 1000);
+						var seconds = 1000;
+						var minutes = seconds * 60;
+						var hours = minutes * 60;
+						var days = hours * 24;
+						var years = days * 365;
+						var today = new Date();
+						var todayYear = today.getFullYear();
+						var todayMonth = today.getMonth()+1;
+						var todayDate = today.getDate();
+						var todayHour = today.getHours();
+						var todayMinute = today.getMinutes();
+						var todaySecond = today.getSeconds();
+						/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+						year - 作为date对象的年份，为4位年份值
+						month - 0-11之间的整数，做为date对象的月份
+						day - 1-31之间的整数，做为date对象的天数
+						hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+						minutes - 0-59之间的整数，做为date对象的分钟数
+						seconds - 0-59之间的整数，做为date对象的秒数
+						microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+						var t1 = Date.UTC(2021,01,26,15,53,48); //北京时间2021-1-26 15:53:48
+						var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+						var diff = t2-t1;
+						var diffYears = Math.floor(diff/years);
+						var diffDays = Math.floor((diff/days)-diffYears*365);
+						var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+						var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+						var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+						document.getElementById("sitetime").innerHTML=" 本站已运行 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+					}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+					siteTime();
+				</script>
+			</div>
+			
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2021
+					<a href="http://www.tigeedev.com/" class="copyright-links" target="_blank" rel="nofollow">Tigee's Blog </a>
+					&nbsp; | &nbsp;
+                    <a href="//beian.miit.gov.cn/" target="_blank" rel="nofollow">
+                        豫ICP备2021005594号-1</a>
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/love.js"></script> -->
+
+<!-- 鼠标点击礼花特效 -->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
