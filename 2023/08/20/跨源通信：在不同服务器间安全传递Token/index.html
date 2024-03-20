@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tigee&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://www.tigeedev.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="浏览器" />
+
+
+<meta name="description" content="跨源通信：在不同服务器间安全传递Token1. 问题描述服务器A 上有一个页面，该页面通过 iframe 方式嵌入到 服务器B 的页面中。我想在 服务器A 的页面中存储一个 token，并且在 ..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    跨源通信：在不同服务器间安全传递Token |
+    
+    Tigee&#39;s Blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Tigee&#39;s Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://xxx.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Tigee'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.tigeedev.cn">
+                        Tigee&#39;s Blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/充电学习"><i class="fa "></i>
+                                充电学习</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about"><i class="fa "></i>
+                                关于</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="跨源通信：在不同服务器间安全传递Token">
+            
+            跨源通信：在不同服务器间安全传递Token
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/08/20</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="跨源通信：在不同服务器间安全传递Token"><a href="#跨源通信：在不同服务器间安全传递Token" class="headerlink" title="跨源通信：在不同服务器间安全传递Token"></a>跨源通信：在不同服务器间安全传递Token</h2><h4 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1. 问题描述"></a>1. 问题描述</h4><p>服务器A 上有一个页面，该页面通过 iframe 方式嵌入到 服务器B 的页面中。我想在 服务器A 的页面中存储一个 token，并且在 服务器B 的页面中获取这个 token。</p>
+<h4 id="2-难点"><a href="#2-难点" class="headerlink" title="2. 难点"></a>2. 难点</h4><p>这个问题涉及到跨域资源共享（CORS）和浏览器的同源策略。由于 服务器A 和 服务器B 是不同的域，所以它们不能直接共享数据，比如通过 localStorage 把 token 存到本地就不可取。</p>
+<h4 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h4><p><code>window.postMessage</code> 方法允许不同源之间的窗口进行通信，服务器A 的页面是通过iFrame嵌入到另一个服务器页面的，正好适用。所以可以在iFrame页面（服务器A）上发送消息，在父页面（服务器B）上设置事件监听器来接收这些消息。</p>
+<h4 id="发送消息的页面（服务器A）"><a href="#发送消息的页面（服务器A）" class="headerlink" title="发送消息的页面（服务器A）"></a>发送消息的页面（服务器A）</h4><blockquote>
+<p>在 服务器A 的页面中，使用以下代码向 服务器B 发送消息：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendMessageToParent</span>(<span class="params">token</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> parentWindow = <span class="built_in">window</span>.parent; <span class="comment">// 获取目标页面的window对象</span></span><br><span class="line">    <span class="keyword">var</span> message = &#123; <span class="attr">type</span>: <span class="string">&#x27;token&#x27;</span>, <span class="attr">data</span>: token &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用&#x27;*&#x27;作为目标源可以接收来自任何源的消息, 也可以指定目标源。</span></span><br><span class="line">    parentWindow.postMessage(message, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送 token 到 服务器B</span></span><br><span class="line"><span class="keyword">var</span> tokenValue = <span class="string">&#x27;token&#x27;</span>;</span><br><span class="line">sendMessageToParent(tokenValue);</span><br></pre></td></tr></table></figure>
+<h4 id="接收消息的页面（服务器B）"><a href="#接收消息的页面（服务器B）" class="headerlink" title="接收消息的页面（服务器B）"></a>接收消息的页面（服务器B）</h4><blockquote>
+<p>在 服务器B 的页面中，使用以下代码接收来自 服务器A 的消息：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 通过event.origin检查消息发送者的源</span></span><br><span class="line">    <span class="comment">// if (event.origin !== &#x27;http://服务器A&#x27;) &#123; return; &#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 检查消息类型</span></span><br><span class="line">    <span class="keyword">if</span> (event.data.type &amp;&amp; event.data.type === <span class="string">&#x27;token&#x27;</span>) &#123;      </span><br><span class="line">        <span class="keyword">var</span> token = event.data.data;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&#x27;接收token: &#x27;</span>, token);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//token存到本地</span></span><br><span class="line">		<span class="built_in">localStorage</span>.setItem(<span class="string">&quot;token&quot;</span>,token)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加事件监听器来接收消息</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;message&#x27;</span>, receiveMessage, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2023/08/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="pre-post btn btn-default" title='git常用命令'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            git常用命令</span>
+    </a>
+    
+    
+    <a href="/2023/06/15/%E5%A4%84%E7%90%86%E4%BB%98%E6%AC%BE%E4%BA%8C%E7%BB%B4%E7%A0%81/" class="next-post btn btn-default" title='处理付款二维码'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            处理付款二维码</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'wsaPXR5dqvagWNRBneUQ5fnK-gzGzoHsz',
+    appKey: 'dpsSm8LvkS3gfUszaNqs5gmK',
+    placeholder: '说点什么吧~',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E6%BA%90%E9%80%9A%E4%BF%A1%EF%BC%9A%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E5%AE%89%E5%85%A8%E4%BC%A0%E9%80%92Token"><span class="toc-text">跨源通信：在不同服务器间安全传递Token</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-text">1. 问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%9A%BE%E7%82%B9"><span class="toc-text">2. 难点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">3. 解决方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%B5%E9%9D%A2%EF%BC%88%E6%9C%8D%E5%8A%A1%E5%99%A8A%EF%BC%89"><span class="toc-text">发送消息的页面（服务器A）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%B5%E9%9D%A2%EF%BC%88%E6%9C%8D%E5%8A%A1%E5%99%A8B%EF%BC%89"><span class="toc-text">接收消息的页面（服务器B）</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+		
+        </div>
+    </div>
+	
+	
+	
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+			<!-- 网站运行时间 -->
+			<div>
+				<span id="sitetime"></span>
+				<script language=javascript>
+					function siteTime(){
+						window.setTimeout("siteTime()", 1000);
+						var seconds = 1000;
+						var minutes = seconds * 60;
+						var hours = minutes * 60;
+						var days = hours * 24;
+						var years = days * 365;
+						var today = new Date();
+						var todayYear = today.getFullYear();
+						var todayMonth = today.getMonth()+1;
+						var todayDate = today.getDate();
+						var todayHour = today.getHours();
+						var todayMinute = today.getMinutes();
+						var todaySecond = today.getSeconds();
+						/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+						year - 作为date对象的年份，为4位年份值
+						month - 0-11之间的整数，做为date对象的月份
+						day - 1-31之间的整数，做为date对象的天数
+						hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+						minutes - 0-59之间的整数，做为date对象的分钟数
+						seconds - 0-59之间的整数，做为date对象的秒数
+						microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+						var t1 = Date.UTC(2021,01,26,15,53,48); //北京时间2021-1-26 15:53:48
+						var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+						var diff = t2-t1;
+						var diffYears = Math.floor(diff/years);
+						var diffDays = Math.floor((diff/days)-diffYears*365);
+						var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+						var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+						var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+						document.getElementById("sitetime").innerHTML=" 本站已运行 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+					}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+					siteTime();
+				</script>
+			</div>
+			
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2021
+					<a href="http://www.tigeedev.com/" class="copyright-links" target="_blank" rel="nofollow">Tigee's Blog </a>
+					&nbsp; | &nbsp;
+                    <a href="//beian.miit.gov.cn/" target="_blank" rel="nofollow">
+                        豫ICP备2021005594号-1</a>
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/love.js"></script> -->
+
+<!-- 鼠标点击礼花特效 -->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>

@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tigee&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://www.tigeedev.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="uni-app,微信小程序" />
+
+
+<meta name="description" content="小程序使用腾讯导航路线规划功能小程序后台添加腾讯位置服务路线规划插件小程序后台 &gt; 设置 &gt; 第三方设置 &gt; 插件管理 &gt; 添加《腾讯位置服务路线规划》插件
+插件详情中查..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    小程序使用腾讯导航路线规划功能 |
+    
+    Tigee&#39;s Blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Tigee&#39;s Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://xxx.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Tigee'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.tigeedev.cn">
+                        Tigee&#39;s Blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/充电学习"><i class="fa "></i>
+                                充电学习</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about"><i class="fa "></i>
+                                关于</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="小程序使用腾讯导航路线规划功能">
+            
+            小程序使用腾讯导航路线规划功能
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/uni-app/" rel="tag">uni-app</a> <a class="tag-none-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/05/24</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                301</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="小程序使用腾讯导航路线规划功能"><a href="#小程序使用腾讯导航路线规划功能" class="headerlink" title="小程序使用腾讯导航路线规划功能"></a>小程序使用腾讯导航路线规划功能</h2><h4 id="小程序后台添加腾讯位置服务路线规划插件"><a href="#小程序后台添加腾讯位置服务路线规划插件" class="headerlink" title="小程序后台添加腾讯位置服务路线规划插件"></a>小程序后台添加腾讯位置服务路线规划插件</h4><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/">小程序后台</a> &gt; 设置 &gt; 第三方设置 &gt; 插件管理 &gt; 添加《腾讯位置服务路线规划》插件</p>
+<h4 id="插件详情中查看AppId和版本号"><a href="#插件详情中查看AppId和版本号" class="headerlink" title="插件详情中查看AppId和版本号"></a>插件详情中查看AppId和版本号</h4><p>AppId和版本号，参考 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wxopen/plugindevdoc?appid=wx50b5593e81dd937a&token=1414832481&lang=zh_CN">腾讯位置服务路线规划开发文档</a></p>
+<h4 id="项目的pages-json中引入插件并开启位置服务"><a href="#项目的pages-json中引入插件并开启位置服务" class="headerlink" title="项目的pages.json中引入插件并开启位置服务"></a>项目的pages.json中引入插件并开启位置服务</h4><p>注意：<code>manifest.json</code> 源码文件的 <code>mp-weixin</code> 对象中也需要添加</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;plugins&quot;: &#123;</span><br><span class="line">	&quot;routePlan&quot;: &#123;</span><br><span class="line">		&quot;version&quot;: &quot;1.0.19&quot;,</span><br><span class="line">		&quot;provider&quot;: &quot;wx50b5593e81dd937a&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;permission&quot;: &#123;</span><br><span class="line">	&quot;scope.userLocation&quot;: &#123;</span><br><span class="line">		&quot;desc&quot;: &quot;你的位置信息将用于小程序位置接口的效果展示&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实现Demo"><a href="#实现Demo" class="headerlink" title="实现Demo"></a>实现Demo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">     &lt;button class&#x3D;&quot;btn-long&quot; @click&#x3D;&quot;doNavi()&quot;&gt;导航&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">	methods: &#123;</span><br><span class="line">		doNavi() &#123;</span><br><span class="line">			let plugin &#x3D; requirePlugin(&#39;routePlan&#39;);</span><br><span class="line">			let key &#x3D; &#39;QTOBZ-VSO35-MKWIS-I2I4G-ATD5S-NZBID&#39;; &#x2F;&#x2F;使用在腾讯位置服务申请的key</span><br><span class="line">			let referer &#x3D; &#39;小程序&#39;; &#x2F;&#x2F;调用插件的app的名称</span><br><span class="line">			let endPoint &#x3D; JSON.stringify(&#123; &#x2F;&#x2F;终点</span><br><span class="line">				&#39;name&#39;: &#39;山西质监检测中心六号楼食品院&#39;,</span><br><span class="line">				&#39;latitude&#39;: 37.69331695869906,</span><br><span class="line">				&#39;longitude&#39;: 112.7597089963646</span><br><span class="line">			&#125;);</span><br><span class="line">			uni.navigateTo(&#123;</span><br><span class="line">				url: &#39;plugin:&#x2F;&#x2F;routePlan&#x2F;index?key&#x3D;&#39; + key + &#39;&amp;referer&#x3D;&#39; + referer + &#39;&amp;endPoint&#x3D;&#39; + endPoint</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a target="_blank" rel="noopener" href="https://lbs.qq.com/miniProgram/plugin/pluginGuide/routePlan">路线规划插件开发指南</a></p>
+<p><a target="_blank" rel="noopener" href="https://codeantenna.com/a/CvDUSFJGrA">uniapp-微信小程序腾讯地图导航</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/LzzMandy/article/details/122066435">uniapp 微信小程序内打开腾讯导航路线规划</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2023/06/15/%E5%A4%84%E7%90%86%E4%BB%98%E6%AC%BE%E4%BA%8C%E7%BB%B4%E7%A0%81/" class="pre-post btn btn-default" title='处理付款二维码'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            处理付款二维码</span>
+    </a>
+    
+    
+    <a href="/2023/03/20/uni-app%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5/" class="next-post btn btn-default" title='uni-app微信小程序跳转外部链接'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            uni-app微信小程序跳转外部链接</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'wsaPXR5dqvagWNRBneUQ5fnK-gzGzoHsz',
+    appKey: 'dpsSm8LvkS3gfUszaNqs5gmK',
+    placeholder: '说点什么吧~',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E8%85%BE%E8%AE%AF%E5%AF%BC%E8%88%AA%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92%E5%8A%9F%E8%83%BD"><span class="toc-text">小程序使用腾讯导航路线规划功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%8E%E5%8F%B0%E6%B7%BB%E5%8A%A0%E8%85%BE%E8%AE%AF%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92%E6%8F%92%E4%BB%B6"><span class="toc-text">小程序后台添加腾讯位置服务路线规划插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E8%AF%A6%E6%83%85%E4%B8%AD%E6%9F%A5%E7%9C%8BAppId%E5%92%8C%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="toc-text">插件详情中查看AppId和版本号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9A%84pages-json%E4%B8%AD%E5%BC%95%E5%85%A5%E6%8F%92%E4%BB%B6%E5%B9%B6%E5%BC%80%E5%90%AF%E4%BD%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1"><span class="toc-text">项目的pages.json中引入插件并开启位置服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0Demo"><span class="toc-text">实现Demo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-text">参考文章</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+		
+        </div>
+    </div>
+	
+	
+	
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+			<!-- 网站运行时间 -->
+			<div>
+				<span id="sitetime"></span>
+				<script language=javascript>
+					function siteTime(){
+						window.setTimeout("siteTime()", 1000);
+						var seconds = 1000;
+						var minutes = seconds * 60;
+						var hours = minutes * 60;
+						var days = hours * 24;
+						var years = days * 365;
+						var today = new Date();
+						var todayYear = today.getFullYear();
+						var todayMonth = today.getMonth()+1;
+						var todayDate = today.getDate();
+						var todayHour = today.getHours();
+						var todayMinute = today.getMinutes();
+						var todaySecond = today.getSeconds();
+						/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+						year - 作为date对象的年份，为4位年份值
+						month - 0-11之间的整数，做为date对象的月份
+						day - 1-31之间的整数，做为date对象的天数
+						hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+						minutes - 0-59之间的整数，做为date对象的分钟数
+						seconds - 0-59之间的整数，做为date对象的秒数
+						microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+						var t1 = Date.UTC(2021,01,26,15,53,48); //北京时间2021-1-26 15:53:48
+						var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+						var diff = t2-t1;
+						var diffYears = Math.floor(diff/years);
+						var diffDays = Math.floor((diff/days)-diffYears*365);
+						var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+						var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+						var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+						document.getElementById("sitetime").innerHTML=" 本站已运行 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+					}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+					siteTime();
+				</script>
+			</div>
+			
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2021
+					<a href="http://www.tigeedev.com/" class="copyright-links" target="_blank" rel="nofollow">Tigee's Blog </a>
+					&nbsp; | &nbsp;
+                    <a href="//beian.miit.gov.cn/" target="_blank" rel="nofollow">
+                        豫ICP备2021005594号-1</a>
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/love.js"></script> -->
+
+<!-- 鼠标点击礼花特效 -->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>

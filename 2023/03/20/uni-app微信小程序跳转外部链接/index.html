@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tigee&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://www.tigeedev.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="uni-app,微信小程序" />
+
+
+<meta name="description" content="uni-app微信小程序跳转外部链接uni.navigateTo 可以跳转到项目的内部页面，然后内部页面接收需要跳转到外部的URL，通过 webview 来打开外部链接。
+1. 新建一个内部页面..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    uni-app微信小程序跳转外部链接 |
+    
+    Tigee&#39;s Blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Tigee&#39;s Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://xxx.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Tigee'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.tigeedev.cn">
+                        Tigee&#39;s Blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/充电学习"><i class="fa "></i>
+                                充电学习</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about"><i class="fa "></i>
+                                关于</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="uni-app微信小程序跳转外部链接">
+            
+            uni-app微信小程序跳转外部链接
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/uni-app/" rel="tag">uni-app</a> <a class="tag-none-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/03/20</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                366</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="uni-app微信小程序跳转外部链接"><a href="#uni-app微信小程序跳转外部链接" class="headerlink" title="uni-app微信小程序跳转外部链接"></a>uni-app微信小程序跳转外部链接</h2><p><code>uni.navigateTo</code> 可以跳转到项目的内部页面，然后内部页面接收需要跳转到外部的URL，通过 <code>webview</code> 来打开外部链接。</p>
+<h3 id="1-新建一个内部页面webview-vue"><a href="#1-新建一个内部页面webview-vue" class="headerlink" title="1. 新建一个内部页面webview.vue"></a>1. 新建一个内部页面webview.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;web-view :src&#x3D;&quot;url&quot;&gt;&lt;&#x2F;web-view&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      url: &#39;&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad(options) &#123;</span><br><span class="line">    this.url &#x3D; decodeURIComponent(options.url)</span><br><span class="line">    console.log(this.url)</span><br><span class="line">    &#x2F;&#x2F; 传入需要跳转的链接 使用web-view标签进行跳转</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot;&gt; &lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>在 <code>pages.json</code> 里面注册这个页面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;path&quot;</span> : <span class="string">&quot;pages/common/webview&quot;</span>,</span><br><span class="line">    &#123;</span><br><span class="line">    &quot;navigationBarTitleText&quot;: &quot;&quot;,</span><br><span class="line">    &quot;enablePullDownRefresh&quot;: false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-点击跳转外部链接"><a href="#2-点击跳转外部链接" class="headerlink" title="2. 点击跳转外部链接"></a>2. 点击跳转外部链接</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//页面</span></span><br><span class="line">&lt;view @click=<span class="string">&quot;skipLink()&quot;</span>&gt; 跳转外部链接 &lt;/view&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对应方法</span></span><br><span class="line"><span class="function"><span class="title">skipLink</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// URL是要跳转的外部地址 作为参数</span></span><br><span class="line">	<span class="keyword">let</span> url = <span class="string">&#x27;http...&#x27;</span></span><br><span class="line">    </span><br><span class="line">	uni.navigateTo(&#123;</span><br><span class="line">        <span class="comment">// 传url到webview界面,实现跳转</span></span><br><span class="line">		url: <span class="string">&#x27;/pages/common/webview?url=&#x27;</span> + url</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-参考链接"><a href="#3-参考链接" class="headerlink" title="3. 参考链接"></a>3. 参考链接</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/web-view.html">web-view官方文档</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://www.tigeedev.com/" target="_blank">TigeeDev</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2023/05/24/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E8%85%BE%E8%AE%AF%E5%AF%BC%E8%88%AA%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92%E5%8A%9F%E8%83%BD/" class="pre-post btn btn-default" title='小程序使用腾讯导航路线规划功能'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            小程序使用腾讯导航路线规划功能</span>
+    </a>
+    
+    
+    <a href="/2023/03/15/H5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2url/" class="next-post btn btn-default" title='H5和微信小程序获取页面url'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            H5和微信小程序获取页面url</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'wsaPXR5dqvagWNRBneUQ5fnK-gzGzoHsz',
+    appKey: 'dpsSm8LvkS3gfUszaNqs5gmK',
+    placeholder: '说点什么吧~',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#uni-app%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">uni-app微信小程序跳转外部链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%86%85%E9%83%A8%E9%A1%B5%E9%9D%A2webview-vue"><span class="toc-text">1. 新建一个内部页面webview.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">2. 点击跳转外部链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">3. 参考链接</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+		
+        </div>
+    </div>
+	
+	
+	
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+			<!-- 网站运行时间 -->
+			<div>
+				<span id="sitetime"></span>
+				<script language=javascript>
+					function siteTime(){
+						window.setTimeout("siteTime()", 1000);
+						var seconds = 1000;
+						var minutes = seconds * 60;
+						var hours = minutes * 60;
+						var days = hours * 24;
+						var years = days * 365;
+						var today = new Date();
+						var todayYear = today.getFullYear();
+						var todayMonth = today.getMonth()+1;
+						var todayDate = today.getDate();
+						var todayHour = today.getHours();
+						var todayMinute = today.getMinutes();
+						var todaySecond = today.getSeconds();
+						/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+						year - 作为date对象的年份，为4位年份值
+						month - 0-11之间的整数，做为date对象的月份
+						day - 1-31之间的整数，做为date对象的天数
+						hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+						minutes - 0-59之间的整数，做为date对象的分钟数
+						seconds - 0-59之间的整数，做为date对象的秒数
+						microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+						var t1 = Date.UTC(2021,01,26,15,53,48); //北京时间2021-1-26 15:53:48
+						var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+						var diff = t2-t1;
+						var diffYears = Math.floor(diff/years);
+						var diffDays = Math.floor((diff/days)-diffYears*365);
+						var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+						var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+						var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+						document.getElementById("sitetime").innerHTML=" 本站已运行 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+					}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+					siteTime();
+				</script>
+			</div>
+			
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2021
+					<a href="http://www.tigeedev.com/" class="copyright-links" target="_blank" rel="nofollow">Tigee's Blog </a>
+					&nbsp; | &nbsp;
+                    <a href="//beian.miit.gov.cn/" target="_blank" rel="nofollow">
+                        豫ICP备2021005594号-1</a>
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/love.js"></script> -->
+
+<!-- 鼠标点击礼花特效 -->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
